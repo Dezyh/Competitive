@@ -1,0 +1,9 @@
+# ignore binaries
+*
+!*.*
+!*/
+
+# ignore testing files
+*.in
+*.out
+*.ans
