@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "tuple": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "ostream": "cpp"
     }
 }

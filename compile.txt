@@ -1,1 +1,3 @@
-g++ -O2 -Wall -Wl,--stack=268435456 d.cpp -o d.exe
+g++ -O2 -Wall -Wl,--stack=268435456 d.cpp -o d
+g++ -O2 -Wall d.cpp -o d
+g++ -O2 -Wall d.cpp -o d && ./d < d.in
