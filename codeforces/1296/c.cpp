@@ -10,7 +10,7 @@ using namespace std;
 #define mod9 998244353
 #define sz(v) ((int)(v).size())
 #define all(v) (v).begin(),(v).end()
-#define tests int t; cin>>t; while(t--)
+#define tests int tcs; cin>>tcs; while(tcs--)
 
 typedef long long ll;
 typedef pair<int, int> pi;
@@ -35,45 +35,36 @@ int main() {
     io();
     tests {
 
-        int o = 200001;
+        int n;
+        cin >> n;
+
         int l = -1;
-        int r = -1;
+        int r = n;
 
         pi c = {0,0};
+        map<pi,int> pos;
+        pos[c] = 0;
 
-        auto ps = map<pi,int>();
-        ps[c] = t;
-
-        int n; cin >> n;
         for (int i=0; i<n; i++) {
-
-            int t = i+1;
-            char m; cin >> m;
             
-            if (m=='U') {
-                c.ss++;
-            } else if (m=='D') {
-                c.ss--;
-            } else if (m=='L') {
-                c.ff--;
-            } else if (m=='R') {
-                c.ff++;
-            }
+            char m;
+            cin >> m;
+            
+            if (m=='L') --c.ff;
+            if (m=='R') ++c.ff;
+            if (m=='U') ++c.ss;
+            if (m=='D') --c.ss;
 
-            if (ps.find(c) == ps.end()) {
-                ps[c] = t;
-            } else {
-                if (t-ps[c] < o) {
-                    l = ps[c];
-                    r = t;
-                    o = t-ps[c];
-                } else {
-                    ps[c] = t;
+            if (pos.find(c) != pos.end()) {
+                if (i+1-pos[c] < r-l+1) {
+                    l = pos[c];
+                    r = i+1;
                 }
             }
+            pos[c] = i+1;
         }
 
-        if (o == 200001) {
+        if (l == -1) {
             cout << -1 << endl;
         } else {
             cout << l+1 << " " << r << endl;
