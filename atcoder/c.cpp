@@ -30,6 +30,18 @@ template<typename K,typename V>unordered_map<K,V>hashmap(){unordered_map<K,V>m;m
 
 const ll inf = 10000000000000ll;
 
+int ceil_div(int x, int y) {
+    return 1 + ((x - 1) / y);
+}
+
 int main() {
     io();
+    ll a,b,c;
+    cin >> a >> b >> c;
+
+    if ( (c-a-b>0) && (4*a*b < (c-a-b)*(c-a-b)) ) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
 }
