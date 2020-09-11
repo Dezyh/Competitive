@@ -25,23 +25,7 @@ typedef vector<vi> vvi;
 typedef vector<bool> vb;
 
 void io(){ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
-template<typename K>unordered_set<K>hashset(){unordered_set<K>s;s.max_load_factor(0.25);s.reserve(512);return s;}
-template<typename K,typename V>unordered_map<K,V>hashmap(){unordered_map<K,V>m;m.max_load_factor(0.25);m.reserve(512);return m;}
-
-const ll inf = 10000000000000ll;
-
-int ceil_div(int x, int y) {
-    return 1 + ((x - 1) / y);
-}
 
 int main() {
     io();
-    ll a,b,c;
-    cin >> a >> b >> c;
-
-    if ( (c-a-b>0) && (4*a*b < (c-a-b)*(c-a-b)) ) {
-        cout << "Yes" << endl;
-    } else {
-        cout << "No" << endl;
-    }
 }
